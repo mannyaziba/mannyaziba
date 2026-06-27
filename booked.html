@@ -9,6 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600&family=Albert+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LGPBLSWHQ4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-LGPBLSWHQ4', { send_page_view: false });
+</script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -103,7 +112,7 @@
     gap: 8px;
     background: rgba(47,184,176,0.1);
     border: 1px solid rgba(47,184,176,0.22);
-    border-radius: 6px;
+    border-radius: 2px;
     padding: 8px 14px;
     margin-bottom: 20px;
   }
@@ -184,7 +193,7 @@
   .field select {
     background: var(--graphite-ash);
     border: 1px solid var(--line-strong);
-    border-radius: 6px;
+    border-radius: 2px;
     color: var(--zen-bone);
     font-family: 'Albert Sans', system-ui, sans-serif;
     font-size: 14px;
@@ -244,7 +253,7 @@
     background: var(--signal-teal);
     color: var(--obsidian);
     border: none;
-    border-radius: 6px;
+    border-radius: 2px;
     font-family: 'Albert Sans', system-ui, sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -310,7 +319,7 @@
     background: #25D366;
     color: #fff;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 2px;
     font-family: 'Albert Sans', system-ui, sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -366,7 +375,7 @@
 
   <!-- ── NAV ── -->
   <nav class="cv-nav">
-    <a href="./index.html" class="back-link">
+    <a href="./offers.html" class="back-link">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
       Back
     </a>
@@ -464,16 +473,21 @@
     <div class="cv-footer-links">
       <a href="https://linkedin.com/in/imannuelaziba" class="cv-footer-link" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://twitter.com/mannyaziba" class="cv-footer-link" target="_blank" rel="noopener">Twitter / X</a>
-      <a href="./index.html" class="cv-footer-link">← Back to site</a>
+      <a href="./offers.html" class="cv-footer-link">← Back to site</a>
     </div>
   </footer>
 
 </div>
 
 <script>
+  function track(e, p) { if (typeof gtag !== 'undefined') gtag('event', e, p || {}); }
+
   const params = new URLSearchParams(window.location.search);
   const region = params.get('region');
   if (region) document.getElementById('payment_region').value = region;
+
+  track('page_view', { page_path: '/booked' });
+  track('conversion', { offer: 'ux_audit', currency: 'NGN', amount: 15000 });
 
   const form = document.getElementById('intake-form');
   const btn = document.getElementById('submit-btn');
@@ -494,9 +508,17 @@
       });
 
       if (res.ok) {
+        track('intake_submitted', { offer: 'ux_audit' });
         formSection.style.display = 'none';
         successState.classList.add('visible');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        const waLink = document.querySelector('.whatsapp-btn');
+        if (waLink) {
+          waLink.addEventListener('click', function () {
+            track('whatsapp_opened', { context: 'post_intake' });
+          }, { once: true });
+        }
       } else {
         btnLabel.textContent = 'Something went wrong — try again';
         btn.disabled = false;
