@@ -469,7 +469,7 @@
 
   <!-- ── FOOTER ── -->
   <footer class="cv-footer">
-    <span class="cv-footer-meta">Nigeria · Remote worldwide · mannyaziba.vercel.app</span>
+    <span class="cv-footer-meta">Nigeria · Remote worldwide · mannyaziba.com</span>
     <div class="cv-footer-links">
       <a href="https://linkedin.com/in/imannuelaziba" class="cv-footer-link" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://twitter.com/mannyaziba" class="cv-footer-link" target="_blank" rel="noopener">Twitter / X</a>
@@ -487,7 +487,6 @@
   if (region) document.getElementById('payment_region').value = region;
 
   track('page_view', { page_path: '/booked' });
-  track('conversion', { offer: 'ux_audit', currency: 'NGN', amount: 15000 });
 
   const form = document.getElementById('intake-form');
   const btn = document.getElementById('submit-btn');
@@ -509,6 +508,7 @@
 
       if (res.ok) {
         track('intake_submitted', { offer: 'ux_audit' });
+        track('conversion', { offer: 'ux_audit', currency: 'NGN', amount: 15000 });
         formSection.style.display = 'none';
         successState.classList.add('visible');
         window.scrollTo({ top: 0, behavior: 'smooth' });
