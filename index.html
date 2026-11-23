@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Manny Aziba — UX & Product Designer. Interface intelligence for developer-built products. Diagnose what's costing you users.">
-<title>Manny Aziba — Interface Intelligence</title>
+<meta name="description" content="Manny Aziba — brand and interface designer who builds what he designs. Flyers and posters, brand starters, landing pages built live, and UI audits. Nigeria, remote worldwide.">
+<meta property="og:title" content="Manny Aziba — Brand &amp; Interface Designer">
+<meta property="og:description" content="Brand and interface designer who builds what he designs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mannyaziba.com/">
+<title>Manny Aziba — Brand &amp; Interface Designer</title>
 <link rel="icon" type="image/png" href="./favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -518,6 +522,80 @@
   }
 
   .footer-link:hover { opacity: 1; color: var(--zen-bone); }
+
+  /* ════════════════════════════════
+     NEW DIRECTION — additions
+  ════════════════════════════════ */
+  [hidden] { display: none !important; }
+
+  .work { padding: 52px 0; border-bottom: 1px solid var(--line); }
+  .work .eyebrow { margin-bottom: 10px; }
+  .work-intro {
+    font-family: 'Albert Sans', system-ui, sans-serif;
+    font-size: clamp(13px, 2vw, 14px);
+    color: var(--zen-bone);
+    opacity: 0.65;
+    line-height: 1.65;
+    max-width: 560px;
+    margin-bottom: 24px;
+  }
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+  .work-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-decoration: none;
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    padding: 12px;
+    transition: border-color 0.15s;
+  }
+  .work-card:hover { border-color: var(--quiet-gold); }
+  .work-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 4px;
+    background: var(--graphite-ash);
+    margin-bottom: 4px;
+  }
+  .work-card-tag {
+    font-family: 'Albert Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid-grey);
+  }
+  .work-card-title {
+    font-family: 'Urbanist', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+  }
+  .work-card-principle {
+    font-family: 'Albert Sans', system-ui, sans-serif;
+    font-size: 12px;
+    color: var(--zen-bone);
+    opacity: 0.6;
+    line-height: 1.5;
+  }
+
+  .paths-note {
+    font-family: 'Albert Sans', system-ui, sans-serif;
+    font-size: 12px;
+    color: var(--mid-grey);
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  .paths-note a { color: var(--quiet-gold); text-decoration: none; }
+  .paths-note a:hover { opacity: 0.7; }
+
+  .contact-links { display: flex; flex-direction: column; gap: 8px; }
 </style>
 </head>
 <body>
@@ -530,17 +608,36 @@
       <img src="./manny_aziba_Logo.svg" alt="Manny Aziba">
     </div>
     <h1 class="studio-name"><span class="name-first">Manny</span> <span class="name-last">Aziba</span></h1>
-    <p class="studio-sub">UX &amp; Product Designer &nbsp;·&nbsp; Nigeria &nbsp;·&nbsp; Remote worldwide</p>
+    <p class="studio-sub">Brand &amp; Interface Designer &nbsp;·&nbsp; Nigeria &nbsp;·&nbsp; Remote worldwide</p>
     <p class="positioning">
-      <span class="bold-claim">The System Translator for developer-built products.</span>
-      I diagnose the exact interface failures that are costing you users — and tell you <span class="bold-claim">what to fix first</span>, before you waste time rebuilding the wrong things.
+      <span class="bold-claim">Brand and interface designer who builds what he designs.</span>
+      Flyers and posters for events, brand starters for small businesses, landing pages built live, and UI audits for builders.
     </p>
   </section>
 
-	<!-- ── 02 PROOF ANCHOR ── -->
+  <!-- ── 02 WORK ──
+       Hidden until Rep 01 is published (Sat 28 Nov 2026).
+       To switch on: delete the hidden attribute, uncomment one card per Rep, newest first, show the latest 3.
+       Label practice work honestly in the tag line. -->
+  <section class="work" id="work" hidden>
+    <p class="eyebrow">Latest work</p>
+    <p class="work-intro">One piece a week, with the principle behind it. Practice work is labelled as practice.</p>
+    <div class="work-grid">
+      <!--
+      <a class="work-card" href="POST_URL" target="_blank" rel="noopener">
+        <img src="./work/r01.png" alt="Describe the image in one sentence" loading="lazy">
+        <span class="work-card-tag">Rep 01 · Redesign concept</span>
+        <span class="work-card-title">Hierarchy</span>
+        <span class="work-card-principle">When a flyer has one key action, make it 3x larger than everything else, because people scan before they read.</span>
+      </a>
+      -->
+    </div>
+  </section>
+
+  <!-- ── 02 PROOF ANCHOR ── -->
 
 	<section class="proof">
-	  <p class="eyebrow">The Diagnosis</p>
+	  <p class="eyebrow">Audit example</p>
 	  <h2 class="proof-heading">UX Intelligence Audit — Remit-Path</h2>
 	  <p class="proof-context">Remit-Path was creating uncertainty during onboarding and weakening user direction inside the wallet dashboard. Here is the diagnosis.</p>
 
@@ -574,33 +671,48 @@
 	  </div>
 	</section>
 
-  <!-- ── 03 PATHS ── -->
+  <!-- ── 03 OFFERS ── -->
   <section class="paths">
-    <p class="eyebrow">Where do you want to go?</p>
+    <p class="eyebrow">What I can make for you</p>
     <div class="paths-grid">
 
       <div class="path-card">
-        <span class="path-card-tag">Recruiter / Hiring</span>
-        <span class="path-card-title">View my background</span>
-        <p class="path-card-desc">CV, experience, and skills. UX &amp; Product Design — interface systems for developer-built products.</p>
-        <a href="./cv.html" class="cta-btn cta-secondary">View CV</a>
+        <span class="path-card-tag">Events &amp; culture</span>
+        <span class="path-card-title">Event flyer or poster</span>
+        <p class="path-card-desc">A clear flyer that puts the date, place and action first. Two revisions, print-ready file, 3–5 days.</p>
+        <a href="https://wa.me/2348149686541?text=Hi%20Manny%2C%20I%20need%20a%20flyer%20or%20poster%20for%20an%20event." class="cta-btn cta-secondary" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+
+      <div class="path-card">
+        <span class="path-card-tag">Small business</span>
+        <span class="path-card-title">Brand starter</span>
+        <p class="path-card-desc">Wordmark, colours, type pairing, business card and a one-page brand sheet. 7–10 days.</p>
+        <a href="https://wa.me/2348149686541?text=Hi%20Manny%2C%20I%27m%20interested%20in%20a%20brand%20starter%20for%20my%20business." class="cta-btn cta-secondary" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+
+      <div class="path-card">
+        <span class="path-card-tag">Business or product</span>
+        <span class="path-card-title">Landing page, built live</span>
+        <p class="path-card-desc">Designed in Figma and built live. Responsive and accessible. 10–14 days.</p>
+        <a href="https://wa.me/2348149686541?text=Hi%20Manny%2C%20I%20need%20a%20landing%20page." class="cta-btn cta-secondary" target="_blank" rel="noopener">Message on WhatsApp</a>
       </div>
 
       <div class="path-card">
         <span class="path-card-tag">Developer / Builder</span>
-        <span class="path-card-title">Book a UX Audit</span>
+        <span class="path-card-title">UX audit</span>
         <p class="path-card-desc">Your interface diagnosed. A prioritised fix list. Delivered in 48–72 hours.</p>
         <a href="https://paystack.shop/pay/ux-audit-ngn" class="cta-btn cta-primary" target="_blank" rel="noopener">Book an audit →</a>
         <p class="price-note">₦15,000</p>
       </div>
 
     </div>
+    <p class="paths-note">Not sure which one you need? Message me and describe what you're making, and I'll quote you. Hiring? <a href="./cv.html">View my CV →</a></p>
   </section>
 
   <!-- ── 04 METHOD ── -->
   <section class="method">
-    <p class="eyebrow">The method</p>
-    <p class="method-intro">Every audit runs through five structural lenses. Not aesthetic preferences. Not general feedback. A clinical diagnosis of what is broken, which lens it violates, and what to fix first.</p>
+    <p class="eyebrow">How I decide</p>
+    <p class="method-intro">Every design and every audit runs through five lenses: Structure, Flow, Feedback, Readability, Consistency. Not taste. Not general feedback. A named reason for each decision, and for each fix.</p>
     <div class="lenses">
       <div class="lens">
         <p class="lens-name">Structure</p>
@@ -651,11 +763,16 @@
   <!-- ── 06 CONTACT ── -->
   <section class="contact">
     <p class="eyebrow">Get in touch</p>
-    <p class="contact-body">For enquiries, project conversations, or audit bookings:</p>
-    <a href="https://twitter.com/mannyaziba" class="contact-link" target="_blank" rel="noopener">Twitter / X — @mannyaziba →</a>
+    <p class="contact-body">For quotes, project conversations or audit bookings:</p>
+    <div class="contact-links">
+      <a href="https://wa.me/2348149686541?text=Hi%20Manny%2C%20I%27d%20like%20to%20talk%20about%20a%20project." class="contact-link" target="_blank" rel="noopener">WhatsApp →</a>
+      <a href="https://twitter.com/mannyaziba" class="contact-link" target="_blank" rel="noopener">Twitter / X — @mannyaziba →</a>
+      <!-- Add Instagram here once the account is live:
+      <a href="https://instagram.com/YOUR_HANDLE" class="contact-link" target="_blank" rel="noopener">Instagram →</a> -->
+    </div>
 
     <div class="site-footer">
-      <span class="footer-meta">Nigeria &nbsp;·&nbsp; Remote worldwide &nbsp;·&nbsp; mannyaziba.vercel.app</span>
+      <span class="footer-meta">Nigeria &nbsp;·&nbsp; Remote worldwide &nbsp;·&nbsp; mannyaziba.com</span>
       <a href="https://linkedin.com/in/imannuelaziba" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
